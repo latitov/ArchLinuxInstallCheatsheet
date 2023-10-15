@@ -52,7 +52,7 @@ You have to create at least two partitions, EFI system partition (260+ MiB), and
 	g
 	w
 
-then
+then (approximate, be careful!):
 
 	# fdisk /dev/sda
 	n
@@ -61,12 +61,12 @@ then
 	1
 	w
 
-then
+then (approximate, be careful!):
 
 	# fdisk /dev/sda
 	n
 	t
-	24
+	23
 	w
 
 The result must be:
@@ -127,6 +127,8 @@ If you created a swap partition, e.g. /dev/sda3, then you can install it too int
 	# pacstrap /mnt \
 	ddrescue dhclient diffutils ethtool hdparm man-db man-pages texinfo nano \
 	nmap openssh openvpn rsync sudo iproute2
+
+ 	# pacstrap /mnt htop socat netcat curl iptables nftables wireguard-tools nodejs
 
 Also add grub, if you're installing non-UEFI system.
 
