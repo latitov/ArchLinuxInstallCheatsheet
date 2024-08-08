@@ -347,10 +347,10 @@ For proper session handling, create pam.d file with the following content:
 	
 		#%PAM-1.0
 		
-		auth      include   system-local-login
-		account   include   system-local-login
-		password  include   system-local-login
-		session   include   system-local-login
+		auth      include   <user-login-or-name>
+		account   include   <user-login-or-name>
+		password  include   <user-login-or-name>
+		session   include   <user-login-or-name>
 
 Edit the nodm.service, and add these lines:
 
