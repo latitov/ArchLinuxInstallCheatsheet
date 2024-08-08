@@ -1,6 +1,6 @@
 # Arch Linux Install Cheatsheet
 
-_Leonid Titov, 2021-01-24_
+_Leonid Titov, 2024-08-08_
 
 - https://www.youtube.com/watch?v=FFXRFTrZ2Lk
 - https://www.youtube.com/watch?v=8T0vvf1xm58
@@ -45,6 +45,8 @@ If the system did not boot in the mode you desired, refer to your motherboard's 
 
 Suppose you have a single /dev/sda disk.
 
+-- If automated, better dd random data into it first, to erase previous partitions.
+
 You have to create at least two partitions, EFI system partition (260+ MiB), and Linux root partition.
 
 	# fdisk /dev/sda
@@ -56,7 +58,7 @@ then (approximate, be careful!):
 
 	# fdisk /dev/sda
 	n
-	+300M
+	+300M           -- 100M min
 	t
 	1
 	w
@@ -124,11 +126,12 @@ If you created a swap partition, e.g. /dev/sda3, then you can install it too int
 
 	# pacstrap /mnt base linux linux-firmware
 
-	# pacstrap /mnt \
-	ddrescue dhclient diffutils ethtool hdparm man-db man-pages texinfo nano \
-	nmap openssh openvpn rsync sudo iproute2
+	# pacstrap /mnt openssh rsync sudo iproute2 dhclient man-db man-pages texinfo nano socat netcat curl wget iptables nftables
 
- 	# pacstrap /mnt htop socat netcat curl iptables nftables wireguard-tools nodejs
+Optional:
+
+	# pacstrap /mnt ddrescue diffutils ethtool hdparm nmap
+ 	# pacstrap /mnt htop wireguard-tools nodejs
 
 Also add grub, if you're installing non-UEFI system.
 
@@ -137,6 +140,8 @@ dhclient is ISC dhclient, specifically.
 ## Fstab
 
 	# genfstab -U /mnt >> /mnt/etc/fstab
+
+(!) This command must be called exactly __once__, or you'll need to edit the file manually.
 
 Check the resulting /mnt/etc/fstab file, and edit it in case of errors.
 
@@ -163,7 +168,7 @@ E.g.:
 
 ## Time zone
 
-	# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+	# ln -sf /usr/share/zoneinfo/<Region>/<City> /etc/localtime
 
 	# hwclock --systohc
 
@@ -171,7 +176,7 @@ E.g.:
 
 ## Hostname
 
-	# echo hostname > /etc/hostname
+	# echo <hostname> > /etc/hostname
 
 Add matching entries to hosts(5):
 
@@ -222,7 +227,9 @@ Now you must generate the main configuration file.
 	# grub-mkconfig -o /boot/grub/grub.cfg
 
 
-## Reboot
+## Exit & Reboot
+
+	# exit
 
 	# systemctl reboot
 
