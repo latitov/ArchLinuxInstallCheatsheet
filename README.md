@@ -251,6 +251,10 @@ by systemd. Remember to remove the installation medium and then login into the n
 	# systemctl start systemd-networkd
 	# systemctl status systemd-networkd
 
+See the list of network interfaces:
+
+	# ip a
+
 Enable DHCP on enp1s0:
 
 	# nano /etc/systemd/network/LAN1.network
@@ -291,6 +295,7 @@ Check:
 
 While waiting for an IP to be assigned you can run something like:
 
+	# ping <some-host>
 	# watch -n 1 ping -c 1 archlinux.org
 
 
@@ -330,7 +335,7 @@ Log in as a user, and:
 
 	$ nano .xinitrc
 
-		#! /bin/bach
+		#! /bin/bash
 		firefox
 
 	$ chmod +x .xinitrc
@@ -351,6 +356,8 @@ Edit the nodm.service, and add these lines:
 
 	Restart=always
 	RestartSec=5
+
+(Look at /etc/systemd/system or /lib/systemd/system)
 
 then
 
