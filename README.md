@@ -382,5 +382,15 @@ Config is in the:
 
 https://wiki.archlinux.org/title/KDE
 
+	# pacman -Syu plasma-meta
+
+ Optional:
+
+ 	# pacman -Syu kde-applications
+
+  Then:
+
+  	# systemctl enable sddm
+   	# systemctl start sddm
 
 ## .
