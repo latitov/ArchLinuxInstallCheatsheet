@@ -380,7 +380,7 @@ Config is in the:
 
 ## To install the KDE
 
-	https://wiki.archlinux.org/title/KDE
+https://wiki.archlinux.org/title/KDE
 
 
 ## .
