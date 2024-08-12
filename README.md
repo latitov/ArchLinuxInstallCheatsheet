@@ -393,4 +393,21 @@ https://wiki.archlinux.org/title/KDE
   	# systemctl enable sddm
    	# systemctl start sddm
 
+## Install from AUR, and yay
+
+	# pacman -Syu git base-devel			-- could've been installed in the beginning
+
+Then for any AUR package:
+
+ 	$ git clone https://aur.archlinux.org/yay-bin.git
+
+  	$ cd yay-bin
+   	$ makepkg -si
+
+If you want to use yay instead (previously installed):
+
+	$ yay -S google-chrome
+
+Some links: https://github.com/Jguer/yay (written in Go BTW), https://aur.archlinux.org/packages
+
 ## .
