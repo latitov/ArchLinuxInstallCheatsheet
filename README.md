@@ -388,6 +388,8 @@ https://wiki.archlinux.org/title/KDE
 
  	# pacman -Syu kde-applications
 
+  	# pacman -Syu iw networkmanager
+
   Then:
 
   	# systemctl enable sddm
