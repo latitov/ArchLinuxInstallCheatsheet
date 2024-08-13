@@ -393,7 +393,7 @@ Then:
 
   	# pacman -Syu networkmanager
    	# systemctl enable NetworkManager
-    	# systemctl start NetworkManager
+	# systemctl start NetworkManager
 
 https://www.reddit.com/r/archlinux/comments/vborwi/kde_plasma_on_arch_linux_not_showing_wifi/
 
