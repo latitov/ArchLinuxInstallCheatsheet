@@ -421,8 +421,8 @@ Some links: https://github.com/Jguer/yay (written in Go BTW), https://aur.archli
 
 ## Non-obviously useful software
 
-https://archlinux.org/packages/extra/x86_64/cherrytree/
-https://archlinux.org/packages/extra/x86_64/doublecmd-qt6/
-https://aur.archlinux.org/packages/amneziawg-go
+- https://archlinux.org/packages/extra/x86_64/cherrytree/
+- https://archlinux.org/packages/extra/x86_64/doublecmd-qt6/
+- https://aur.archlinux.org/packages/amneziawg-go
 
 ## .
