@@ -383,14 +383,21 @@ Config is in the:
 https://wiki.archlinux.org/title/KDE
 
 	# pacman -Syu plasma-meta
-
+ 
  Optional:
 
- 	# pacman -Syu kde-applications
+ 	# pacman -Syu kde-applications  -- can be huge, take care to select what you really want
+	# pacman -Syu iw
 
-  	# pacman -Syu iw networkmanager
+Then:
 
-  Then:
+  	# pacman -Syu networkmanager
+   	# systemctl enable NetworkManager
+    	# systemctl start NetworkManager
+
+https://www.reddit.com/r/archlinux/comments/vborwi/kde_plasma_on_arch_linux_not_showing_wifi/
+
+Then:
 
   	# systemctl enable sddm
    	# systemctl start sddm
