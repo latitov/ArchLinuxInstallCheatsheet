@@ -425,4 +425,10 @@ Some links: https://github.com/Jguer/yay (written in Go BTW), https://aur.archli
 - https://archlinux.org/packages/extra/x86_64/doublecmd-qt6/
 - https://aur.archlinux.org/packages/amneziawg-go
 
+## Troubleshooting
+
+### Updating old system, "is of marginal trust" error
+
+	# pacman -Sy archlinux-keyring
+
 ## .
